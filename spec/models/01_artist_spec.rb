@@ -1,14 +1,15 @@
 require 'spec_helper'
 
 describe "Artist" do
-  before do 
+  before do     
+    
     @artist = Artist.create(:name => "Taylor Swift") 
 
     blank_space =  Song.create(:name => "Blank Space", :artist => @artist) 
 
     pop = Genre.create(:name => "Pop")
 
-    blank_space.genre_ids = pop.id
+    blank_space.genre_id = pop.id
     
   end
   it "can be initialized" do
